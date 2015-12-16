@@ -8,10 +8,9 @@ class kibana::proxy {
   httpauth { 'kibadmin':
     file      => '/etc/nginx/.htpasswd',
     password  => 'password',
-    realm     => 'realm',
     mechanism => basic,
     ensure    => present,
-    notify    => Service['kibana'],
+    notify    => Service['nginx'],
   }
 
   # Create proxy
