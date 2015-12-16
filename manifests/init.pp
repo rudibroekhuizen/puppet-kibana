@@ -35,7 +35,7 @@
 #
 # Copyright 2015 Your name here, unless otherwise noted.
 #
-class kibana {
+class kibana (
   $download_url = 'https://download.elastic.co/kibana/kibana/kibana-4.1.3-linux-x64.tar.gz',
   $kibana_hash,
 ) {
