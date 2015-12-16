@@ -36,6 +36,18 @@
 # Copyright 2015 Your name here, unless otherwise noted.
 #
 class kibana {
+  $kibana_hash,
+) {
 
+  class { 'kibana::package':
+  }
+
+  class { 'kibana::config':
+    require => Class['kibana::package']
+  }
+  
+  class { 'kibana::proxy':
+    require => Class['kibana::config']
+  }
 
 }
