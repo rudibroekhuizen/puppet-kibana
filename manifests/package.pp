@@ -11,7 +11,7 @@ class kibana::package {
   }
  
   exec { 'chown_kibana_directory':
-    command     => "chown -R ${kibana::kibana_user}:${kibana::kibana4_group} ${kibana::install_dir}/kibana-${version}",
+    command     => "chown -R ${kibana::kibana_user}:${kibana::kibana_group} ${kibana::install_dir}/kibana",
     path        => ['/bin','/sbin'],
     refreshonly => true,
     require     => $symlink_require,
