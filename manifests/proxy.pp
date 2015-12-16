@@ -11,6 +11,7 @@ class kibana::proxy {
     realm     => 'realm',
     mechanism => basic,
     ensure    => present,
+    notify    => Service['kibana'],
   }
 
   # Create proxy
