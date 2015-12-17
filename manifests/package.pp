@@ -3,10 +3,11 @@
 class kibana::package {
 
   archive { 'kibana':
-    ensure   => present,
-    checksum => false,
-    target   => $kibana::install_dir,
-    url      => $kibana::download_url,
+    ensure           => present,
+    checksum         => false,
+    target           => $kibana::install_dir,
+    url              => $kibana::download_url,
+    strip_components => 1,
     #notify   => Exec['chown_kibana_directory'],
   }
  
