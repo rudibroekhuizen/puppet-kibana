@@ -13,6 +13,12 @@ class kibana::proxy {
     notify    => Service['nginx'],
   }
 
+  # Set permissions on .htpasswd file
+  file { '/etc/nginx/.htpasswd',
+    mode    => '0644',
+    require => Httpauth['kibadmin']
+  }
+
   # Create proxy
   nginx::resource::upstream { 'kibana':
     members => ['localhost:5601', ],
@@ -24,5 +30,5 @@ class kibana::proxy {
     auth_basic_user_file => '/etc/nginx/.htpasswd',
     require              => Httpauth['kibadmin']
   }
-
+  
 }
