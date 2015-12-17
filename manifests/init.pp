@@ -37,7 +37,7 @@
 #
 class kibana (
   $download_url = 'https://download.elastic.co/kibana/kibana/kibana-4.1.3-linux-x64.tar.gz',
-  $install_dir  = '/opt',
+  $install_dir  = '/opt/kibana',
   $kibana_hash  = { '' => { 'host'      => '"localhost"',
                           },
                   }
