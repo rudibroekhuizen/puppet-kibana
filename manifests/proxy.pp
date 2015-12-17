@@ -13,7 +13,7 @@ class kibana::proxy {
     notify    => Service['nginx'],
   }
 
-  # Set correct permissions on .htpasswd file
+  # Set correct permissions on password file
   file { '/etc/nginx/.htpasswd':
     mode    => '0644',
     require => Httpauth['kibadmin']
