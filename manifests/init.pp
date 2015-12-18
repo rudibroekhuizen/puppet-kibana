@@ -55,4 +55,8 @@ class kibana (
     require => Class['kibana::config']
   }
 
+  class { 'kibana::service':
+    require => Class['kibana::proxy']
+  }
+
 }
