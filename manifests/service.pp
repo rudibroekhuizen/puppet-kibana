@@ -19,7 +19,7 @@ class kibana::service {
 # Start service
   service {'kibana':
     ensure    => running,
-    subscribe => File['init'],
+    subscribe => File['kibana init'],
   }
   
 }
