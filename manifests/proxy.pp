@@ -5,9 +5,9 @@ class kibana::proxy {
   class { 'nginx': }
 
   # Create password file
-  httpauth { 'kibadmin':
+  httpauth { 'kibana':
     file      => '/etc/nginx/.htpasswd',
-    password  => 'password',
+    password  => $kibana::kibana_password,
     mechanism => basic,
     ensure    => present,
     notify    => Service['nginx'],
