@@ -28,7 +28,7 @@ class kibana::proxy {
     proxy                => 'http://localhost:5601',
     auth_basic           => 'Restricted Content',
     auth_basic_user_file => '/etc/nginx/.htpasswd',
-    require              => Httpauth['kibadmin']
+    require              => Httpauth['kibana']
   }
   
 }
