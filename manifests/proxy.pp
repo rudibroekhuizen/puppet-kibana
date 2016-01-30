@@ -16,7 +16,7 @@ class kibana::proxy {
   # Set correct permissions on password file
   file { '/etc/nginx/.htpasswd':
     mode    => '0644',
-    require => Httpauth['kibadmin']
+    require => Httpauth['kibana']
   }
 
   # Create proxy
