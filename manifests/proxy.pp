@@ -4,6 +4,11 @@ class kibana::proxy {
 
   class { 'nginx': }
 
+  # Create nginx directory before creating .htpasswd file
+  file{ '/etc/nginx':
+    ensure  => directory,
+  }
+
   # Create password file
   httpauth { 'kibana':
     file      => '/etc/nginx/.htpasswd',
@@ -11,6 +16,7 @@ class kibana::proxy {
     mechanism => basic,
     ensure    => present,
     notify    => Service['nginx'],
+    require   => File['/etc/nginx']
   }
 
   # Set correct permissions on password file
