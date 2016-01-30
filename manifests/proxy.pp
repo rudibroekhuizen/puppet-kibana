@@ -11,6 +11,7 @@ class kibana::proxy {
     mechanism => basic,
     ensure    => present,
     notify    => Service['nginx'],
+    require   => Class['nginx']
   }
 
   # Set correct permissions on password file
