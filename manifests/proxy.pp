@@ -11,6 +11,7 @@ class kibana::proxy {
     mechanism => basic,
     ensure    => present,
     notify    => Service['nginx'],
+    require   => Class['nginx'],
   }
 
   # Set correct permissions on password file
@@ -28,7 +29,7 @@ class kibana::proxy {
     proxy                => 'http://localhost:5601',
     auth_basic           => 'Restricted Content',
     auth_basic_user_file => '/etc/nginx/.htpasswd',
-    require              => Httpauth['kibana']
+    require              => File['/etc/nginx/.htpasswd']
   }
   
 }
