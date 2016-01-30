@@ -2,7 +2,7 @@
 #
 class kibana::proxy {
 
-  class { 'nginx': }
+  class { 'nginx': } ->
 
   # Create password file
   httpauth { 'kibana':
