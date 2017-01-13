@@ -36,8 +36,8 @@
 # Copyright 2015 Your name here, unless otherwise noted.
 #
 class kibana (
-  $download_url    = 'https://download.elastic.co/kibana/kibana/kibana-4.1.3-linux-x64.tar.gz',
-  $install_dir     = '/opt/kibana',
+  $download_url    = 'https://artifacts.elastic.co/downloads/kibana/kibana-5.1.2-amd64.deb',
+  $install_dir     = '/usr/share/kibana',
   $kibana_password = 'password',
   $kibana_hash     = { '' => { 'host' => '"localhost"',
                              },
